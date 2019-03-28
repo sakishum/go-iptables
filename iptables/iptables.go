@@ -162,8 +162,8 @@ func (ipt *IPTables) Delete(table, chain string, rulespec ...string) error {
 
 // List rules in specified table/chain
 func (ipt *IPTables) List(table, chain string) ([]string, error) {
-	//args := []string{"-t", table, "-S", chain}
-    args := []string{"-t", table, "-n", "--line", "--list", chain}
+	args := []string{"-t", table, "-S", chain}
+    //args := []string{"-t", table, "-n", "--line", "--list", chain}
 	return ipt.executeList(args)
 }
 
